@@ -31,7 +31,7 @@ mongoose
 
 const store = new MongoStore({
   url: dbUrl,
-  secret: "ThisShouldBeAValidSecret",
+  secret: process.env.SECRET,
   touchAfter: 24 * 60 * 60,
 });
 
@@ -44,7 +44,7 @@ sessionConfig = {
   name: "modeOn",
   saveUninitialized: true,
   resave: false,
-  secret: "ThisShouldBeAValidSecret",
+  secret: process.env.SECRET,
   SameSite: "None",
   cookie: {
     httpOnly: true,
